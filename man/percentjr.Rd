@@ -2,7 +2,7 @@
 % Please edit documentation in R/percentjr.R
 \name{percentjr}
 \alias{percentjr}
-\title{Label percentages with thin space between number and percent sign (2.5 \%, 50 \%, etc)}
+\title{Label percentages with thin space between number and percent sign (2.5 \%, 50 \%, etc.)}
 \usage{
 percentjr(
   x,
@@ -40,7 +40,7 @@ Applied to rescaled data.}
 Formated percentages
 }
 \description{
-Label percentages with thin space between number and percent sign (2.5 \%, 50 \%, etc)
+Label percentages with thin space between number and percent sign (2.5 \%, 50 \%, etc.)
 }
 \examples{
 percentjr(0.01)

@@ -1,4 +1,4 @@
-#' Label percentages with thin space between number and percent sign (2.5 %, 50 %, etc)
+#' Label percentages with thin space between number and percent sign (2.5 %, 50 %, etc.)
 #'
 #' @param x A numeric vector to format.
 #' @param accuracy A number to round to. Use (e.g.) `0.01` to show 2 decimal places of precision. If `NULL`, the default, uses a heuristic that should ensure breaks have the minimum number of digits needed to show the difference between adjacent values.
