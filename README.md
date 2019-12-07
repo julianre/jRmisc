@@ -2,7 +2,7 @@
 
 ## Overview
 
-I wrote this package to store my modified `ggplot2` theme (`theme_jr`). While I was at it, I addad a function to format percantages (`percentjr`, adds thin space between the number and the percent sign).
+I wrote this package to store my modified `ggplot2` theme (`theme_jr`). While I was at it, I added a function to format percentages (`percentjr`, adds thin space between the number and the percent sign).
 
 ## Installation
 
