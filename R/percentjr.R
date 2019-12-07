@@ -13,6 +13,7 @@
 #' @param ... Other arguments passed on to [base::format()].
 #'
 #' @return  Formated percentages
+#' @importFrom scales number
 #'
 #' @examples
 #' percentjr(0.01)
