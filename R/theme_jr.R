@@ -1,4 +1,4 @@
-#' Provides ggplot2 theme theme_jr()
+#' Provides `theme_jr()` for `ggplot2`
 #'
 #' @param base_size base font size
 #' @param base_family base font family (LM Sans 10)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_jr.R
 \name{theme_jr}
 \alias{theme_jr}
-\title{Provides ggplot2 theme theme_jr()}
+\title{Provides \code{theme_jr()} for \code{ggplot2}}
 \usage{
 theme_jr(
   base_size = 10,
@@ -24,7 +24,7 @@ theme_jr(
 Theme for ggplot2
 }
 \description{
-Provides ggplot2 theme theme_jr()
+Provides \code{theme_jr()} for \code{ggplot2}
 }
 \examples{
 df <- data.frame(x = runif(10), y = rnorm(10))
