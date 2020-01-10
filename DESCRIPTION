@@ -1,11 +1,11 @@
 Package: jRmisc
 Title: Miscellaneous Functions by julianre
-Version: 0.0.0.2001
+Version: 0.0.0.2002
 Authors@R: 
-    person(given = "J",
-           family = "R",
+    person(given = "Julian",
+           family = "Reinhold",
            role = c("aut", "cre"),
-           email = "j.r@example.com")
+           email = "holidayjulian@mailbox.org")
 Description: Provides functions, that are (sometimes) helpful.
 License: MIT + file LICENSE
 Encoding: UTF-8
