@@ -8,6 +8,6 @@ I wrote this package to store my modified `ggplot2` theme (`theme_jr`). While I 
 
 ``` r
 # The easiest way to get jRmisc is to install it from GitHub:
-# install.packages("devtools")
-devtools::install_github("julianre/jRmisc")
+# install.packages("remotes")
+remotes::install_github("julianre/jRmisc")
 ```
