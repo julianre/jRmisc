@@ -34,7 +34,7 @@
 #' Session_Info("jRmisc")
 
 Session_Info <- function(pkgs = NULL, include_base = FALSE, include_libs = FALSE) {
-  info <- session_info()
+  info <- sessioninfo::session_info()
   if (!is.null(knitr::opts_knit$get('rmarkdown.pandoc.to'))) {
     info$platform$pandoc <- paste("Version", as.character(rmarkdown:::pandoc_version()))
     if (!is.null(citeproc_version()) && citeproc_version() > 0) {
@@ -88,7 +88,7 @@ print.Packages_Info <- function(x, ...) {
     px <- cbind("!" = prob, px)
   }
 
-  local_options(list(max.print = 99999))
+  withr::local_options(list(max.print = 99999))
   pr <- print.data.frame(px, right = FALSE, row.names = FALSE)
 
   # cat("\n")
