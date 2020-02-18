@@ -1,6 +1,6 @@
 Package: jRmisc
 Title: Miscellaneous Functions by julianre
-Version: 0.0.3.0
+Version: 0.0.3.1
 Authors@R: 
     person(given = "Julian",
            family = "Reinhold",
