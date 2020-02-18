@@ -22,7 +22,7 @@ percentjr(
 \item{accuracy}{A number to round to. Use (e.g.) \code{0.01} to show 2 decimal places of precision. If \code{NULL}, the default, uses a heuristic that should ensure breaks have the minimum number of digits needed to show the difference between adjacent values.
 Applied to rescaled data.}
 
-\item{scale}{A scaling factor: x will be multiplied by \code{scale} before formating. This is useful if the underlying data is very small or very large.}
+\item{scale}{A scaling factor: x will be multiplied by \code{scale} before formatting. This is useful if the underlying data is very small or very large.}
 
 \item{prefix}{Symbols to display before and after value.}
 
@@ -37,7 +37,7 @@ Applied to rescaled data.}
 \item{...}{Other arguments passed on to \code{\link[base:format]{base::format()}}.}
 }
 \value{
-Formated percentages
+Formatted percentages
 }
 \description{
 Label percentages with thin space between number and percent sign (2.5 \%, 50 \%, etc.)
