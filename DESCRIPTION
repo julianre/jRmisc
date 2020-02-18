@@ -18,8 +18,8 @@ Imports:
     sessioninfo,
     withr,
     utils,
+    knitr,
     rmarkdown
 RoxygenNote: 7.0.2
 Suggests: 
-    knitr
 VignetteBuilder: knitr
