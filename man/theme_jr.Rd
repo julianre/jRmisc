@@ -5,7 +5,7 @@
 \title{Provides \code{theme_jr()} for \code{ggplot2}}
 \usage{
 theme_jr(
-  base_size = 10,
+  base_size = 11,
   base_family = "",
   base_line_size = base_size/22,
   base_rect_size = base_size/22
