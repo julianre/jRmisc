@@ -4,7 +4,12 @@
 \alias{Session_Info}
 \title{Print session information}
 \usage{
-Session_Info(pkgs = NULL, include_base = FALSE, include_libs = FALSE)
+Session_Info(
+  pkgs = NULL,
+  include_base = FALSE,
+  include_libs = FALSE,
+  check_versions = TRUE
+)
 }
 \arguments{
 \item{pkgs}{Either a vector of package names or NULL. If \code{NULL},
@@ -15,6 +20,8 @@ all dependencies of the package.}
 false since base packages should always match the R version.}
 
 \item{include_libs}{Include the library path of each package in the output. Disabled by default}
+
+\item{check_versions}{Compares the used version of Pandoc with the Pandoc version used to build pandoc-crossref. For more information, see Details}
 }
 \description{
 This is \code{\link[sessioninfo:session_info]{sessioninfo::session_info()}} rewritten to export the version of
@@ -37,6 +44,11 @@ Sometimes this data is not available, then it is \code{NA}.
 Examples: \verb{CRAN (R 3.3.2)}, \verb{Github (r-lib/pkgbuild@8aab60b)},
 \code{Bioconductor}, \code{local}.
 }
+
+If the Pandoc Version used to build the document is different from the version which waas used
+to compile pandoc-crossref, this is noted in the output if \code{check_versions = TRUE}. This may be helpful
+because mixing versions is not supported and "strange things may (and likely will) happen silently"
+due to internal changes with Pandoc between versions.
 
 See \code{\link[sessioninfo:package_info]{sessioninfo::package_info()}} for the list of columns in the data frame that
 is \emph{returned} (as opposed to \emph{printed}).
