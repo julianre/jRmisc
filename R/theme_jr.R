@@ -13,7 +13,7 @@
 #' require(ggplot2)
 #' ggplot(df, aes(x = x, y = y)) + geom_point() + theme_jr()
 #' @export
-theme_jr <- function(base_size = 10, base_family = "",
+theme_jr <- function(base_size = 11, base_family = "",
                      base_line_size = base_size/22, base_rect_size = base_size/22) {
   half_line <- base_size/2
   theme(
