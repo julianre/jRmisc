@@ -40,9 +40,14 @@ Session_Info <- function(pkgs = NULL, include_base = FALSE, include_libs = FALSE
     if (!is.null(citeproc_version()) && citeproc_version() > 0) {
       info$platform$`pandoc-citeproc` <- paste("Version", as.character(citeproc_version()))
     }
-    if (!is.null(crossref_version()) && crossref_version() > 0) {
-      info$platform$`pandoc-crossref` <- paste("Version", as.character(crossref_version()))
+    if (!is.null(crossref_version()) && crossref_version() > 0 && !is.null(crossref_pandoc_version())) {
+      info$platform$`pandoc-crossref` <- paste0("Version ", as.character(crossref_version()), " (Pandoc ", as.character(crossref_pandoc_version()), ")")
     }
+  }
+  if (rmarkdown:::pandoc_version() != crossref_pandoc_version()) {
+    info$platform$` `   <- "**********************************************"
+    info$platform$`  `  <- "Versions Mismatch (Crossref and Pandoc)"
+    info$platform$`   ` <- "**********************************************"
   }
   if (include_libs == FALSE) {
     class(info$packages) <- "Packages_Info"
@@ -119,12 +124,3 @@ print.Packages_Info <- function(x, ...) {
 as.character.Packages_Info <- function(x, ...) {
   capture.output(print(x))
 }
-
-
-
-
-
-
-
-
-

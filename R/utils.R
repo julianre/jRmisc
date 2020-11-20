@@ -64,6 +64,11 @@ crossref_version <- function() {
   .crossref$version
 }
 
+crossref_pandoc_version <- function() {
+  find_crossref()
+  .crossref$pandoc
+}
+
 find_crossref <- function(cache = TRUE) {
 
   if (!is.null(.crossref$dir) && cache) return(invisible(as.list(.crossref)))
@@ -93,6 +98,7 @@ find_crossref <- function(cache = TRUE) {
   if (!is.null(found_src)) {
     .crossref$dir <- found_src
     .crossref$version <- found_ver
+    .crossref$pandoc <- get_crossref_pandoc_version(.crossref$dir)
   }
 
   invisible(as.list(.crossref))
@@ -109,4 +115,21 @@ get_crossref_version <- function(crossref_dir) {
   version <- strsplit(info, " ")[[1]][2]
   version <- sub("v", "", version)
   numeric_version(version)
+}
+
+# Extract Pandoc Version used for building pandoc-crossref
+get_crossref_pandoc_version <- function(crossref_dir) {
+  path <- file.path(crossref_dir, "pandoc-crossref")
+  if (rmarkdown:::is_windows()) path <- paste0(path, ".exe")
+  if (!utils::file_test("-x", path)) return(numeric_version("0"))
+  info <- rmarkdown:::with_pandoc_safe_environment(
+    system(paste(shQuote(path), "--version"), intern = TRUE)
+  )
+  built_pandoc <- regmatches(info[[1]], regexpr("built with Pandoc [v0-9.]{4,20}", info[[1]]))
+  if(nzchar(built_pandoc)) {
+    built_pandoc <- regmatches(built_pandoc, regexpr("[0-9.]{4,20}", built_pandoc))
+  } else {
+    built_pandoc <- "unknown"
+  }
+  numeric_version(built_pandoc)
 }
