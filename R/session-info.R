@@ -51,7 +51,7 @@ Session_Info <- function(pkgs = NULL, include_base = FALSE, include_libs = FALSE
     }
   }
   if (check_versions == TRUE) {
-    if (rmarkdown:::pandoc_version() != crossref_pandoc_version()) {
+    if (!is.null(crossref_version()) && rmarkdown:::pandoc_version() != crossref_pandoc_version()) {
     info$platform$` `   <- "**********************************************"
     info$platform$`  `  <- "Versions Mismatch: pandoc-crossref and Pandoc"
     info$platform$`   ` <- "**********************************************"
