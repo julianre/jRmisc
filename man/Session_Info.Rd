@@ -45,10 +45,10 @@ Examples: \verb{CRAN (R 3.3.2)}, \verb{Github (r-lib/pkgbuild@8aab60b)},
 \code{Bioconductor}, \code{local}.
 }
 
-If the Pandoc Version used to build the document is different from the version which waas used
+If the Pandoc version used to build the document is different from the version which was used
 to compile pandoc-crossref, this is noted in the output if \code{check_versions = TRUE}. This may be helpful
 because mixing versions is not supported and "strange things may (and likely will) happen silently"
-due to internal changes with Pandoc between versions.
+due to internal changes of Pandoc between versions.
 
 See \code{\link[sessioninfo:package_info]{sessioninfo::package_info()}} for the list of columns in the data frame that
 is \emph{returned} (as opposed to \emph{printed}).
