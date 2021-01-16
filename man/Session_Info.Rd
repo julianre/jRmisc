@@ -26,7 +26,8 @@ false since base packages should always match the R version.}
 \description{
 This is \code{\link[sessioninfo:session_info]{sessioninfo::session_info()}} rewritten to export the version of
 Pandoc, pandoc-citeproc and \href{https://github.com/lierdakil/pandoc-crossref}{pandoc-crossref}.
-By default it also hides the library paths. Apart from that, it's identical to the original function.
+By default it also hides the library paths. Apart from that, it's (nearly) identical to the original function.
+It also prints the system time in addition to the date.
 }
 \details{
 Columns in the \emph{printed} package list:
