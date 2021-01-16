@@ -2,7 +2,8 @@
 #'
 #' This is [sessioninfo::session_info()] rewritten to export the version of
 #' Pandoc, pandoc-citeproc and \href{https://github.com/lierdakil/pandoc-crossref}{pandoc-crossref}.
-#' By default it also hides the library paths. Apart from that, it's identical to the original function.
+#' By default it also hides the library paths. Apart from that, it's (nearly) identical to the original function.
+#' It also prints the system time in addition to the date.
 #'
 #' @details
 #' Columns in the *printed* package list:
@@ -41,6 +42,7 @@
 
 Session_Info <- function(pkgs = NULL, include_base = FALSE, include_libs = FALSE, check_versions = TRUE) {
   info <- sessioninfo::session_info()
+  info[["platform"]][["time"]] <-  format(Sys.time(), "%H:%M:%S")
   if (!is.null(knitr::opts_knit$get('rmarkdown.pandoc.to'))) {
     info$platform$pandoc <- paste("Version", as.character(rmarkdown:::pandoc_version()))
     if (!is.null(citeproc_version()) && citeproc_version() > 0) {
