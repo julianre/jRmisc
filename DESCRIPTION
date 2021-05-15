@@ -21,7 +21,8 @@ Imports:
     withr,
     utils,
     knitr,
-    rmarkdown
+    rmarkdown,
+    stringr
 RoxygenNote: 7.1.1
 Suggests: 
 VignetteBuilder: knitr
