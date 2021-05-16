@@ -2,9 +2,9 @@
 #' Formats the caption according to the output format.
 #'
 #' @param caption A character vector containing the (long) caption of the table.
-#' @param shortcaption An optional character vector containing the short caption
-#' @param label An optional character vector containing the label used for referencing
-#' @param unlisted Either `TRUE` or `FALSE`, to determine if the table should be added to the list of tables
+#' @param label An optional character vector containing the label used for referencing.
+#' @param shortcaption An optional character vector containing the short caption.
+#' @param unlisted Either `TRUE` or `FALSE`, to determine if the table should be added to the list of tables.
 #'
 #' @return  Formatted table caption
 #' @importFrom stringr str_starts str_replace
@@ -15,8 +15,8 @@
 #' @export
 tablecaption <- function(
   caption,
-  shortcaption = NULL,
   label = NULL,
+  shortcaption = NULL,
   unlisted = FALSE) {
   # Check, if caption is a character vector
   if (!is.character(caption) | !is.vector(caption) | nchar(caption) == 0) {

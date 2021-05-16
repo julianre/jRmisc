@@ -5,16 +5,16 @@
 \title{Function to format captions for table when using pandoc-crossref and table-short-captions Lua filter.
 Formats the caption according to the output format.}
 \usage{
-tablecaption(caption, shortcaption = NULL, label = NULL, unlisted = FALSE)
+tablecaption(caption, label = NULL, shortcaption = NULL, unlisted = FALSE)
 }
 \arguments{
 \item{caption}{A character vector containing the (long) caption of the table.}
 
-\item{shortcaption}{An optional character vector containing the short caption}
+\item{label}{An optional character vector containing the label used for referencing.}
 
-\item{label}{An optional character vector containing the label used for referencing}
+\item{shortcaption}{An optional character vector containing the short caption.}
 
-\item{unlisted}{Either \code{TRUE} or \code{FALSE}, to determine if the table should be added to the list of tables}
+\item{unlisted}{Either \code{TRUE} or \code{FALSE}, to determine if the table should be added to the list of tables.}
 }
 \value{
 Formatted table caption
