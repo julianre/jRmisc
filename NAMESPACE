@@ -3,6 +3,7 @@
 S3method(as.character,Packages_Info)
 S3method(print,Packages_Info)
 export(EZfigure)
+export(EZtable)
 export(Session_Info)
 export(insertfigure)
 export(percentjr)

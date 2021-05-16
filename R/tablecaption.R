@@ -1,5 +1,7 @@
 #' Function to format captions for table when using pandoc-crossref and table-short-captions Lua filter.
+#'
 #' Formats the caption according to the output format.
+#' For the short caption, you need this Lua Filter: https://github.com/pandoc/lua-filters/tree/master/table-short-captions
 #'
 #' @param caption A character vector containing the (long) caption of the table.
 #' @param label An optional character vector containing the label used for referencing.
@@ -7,6 +9,7 @@
 #' @param unlisted Either `TRUE` or `FALSE`, to determine if the table should be added to the list of tables.
 #'
 #' @return  Formatted table caption
+#' @importFrom knitr is_latex_output
 #' @importFrom stringr str_starts str_replace
 #'
 #' @examples
@@ -42,6 +45,7 @@ tablecaption <- function(
   }
   # unlisted must be TRUE or FALSE
   if (!is.logical(unlisted)) stop("unlisted must be TRUE or FALSE.")
+  # Craft the Caption
   if (knitr::is_latex_output()) {
     caption_str <- paste0(
       "Table: ",
@@ -60,3 +64,7 @@ tablecaption <- function(
   }
   return(caption_str)
 }
+
+#' @rdname tablecaption
+#' @export
+EZtable <- function(caption, shortcaption = NULL, label = opts_current$get("label")) { tablecaption(caption = caption, shortcaption = shortcaption, unlisted = FALSE, label = label) }

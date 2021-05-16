@@ -2,10 +2,12 @@
 % Please edit documentation in R/tablecaption.R
 \name{tablecaption}
 \alias{tablecaption}
-\title{Function to format captions for table when using pandoc-crossref and table-short-captions Lua filter.
-Formats the caption according to the output format.}
+\alias{EZtable}
+\title{Function to format captions for table when using pandoc-crossref and table-short-captions Lua filter.}
 \usage{
 tablecaption(caption, label = NULL, shortcaption = NULL, unlisted = FALSE)
+
+EZtable(caption, shortcaption = NULL, label = opts_current$get("label"))
 }
 \arguments{
 \item{caption}{A character vector containing the (long) caption of the table.}
@@ -20,8 +22,8 @@ tablecaption(caption, label = NULL, shortcaption = NULL, unlisted = FALSE)
 Formatted table caption
 }
 \description{
-Function to format captions for table when using pandoc-crossref and table-short-captions Lua filter.
 Formats the caption according to the output format.
+For the short caption, you need this Lua Filter: https://github.com/pandoc/lua-filters/tree/master/table-short-captions
 }
 \examples{
 tablecaption("Caption of the Table")
