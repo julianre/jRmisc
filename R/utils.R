@@ -126,7 +126,7 @@ get_crossref_pandoc_version <- function(crossref_dir) {
     system(paste(shQuote(path), "--version"), intern = TRUE)
   )
   built_pandoc <- regmatches(info[[1]], regexpr("built with Pandoc [v0-9.]{4,20}", info[[1]]))
-  if(nzchar(built_pandoc)) {
+  if (nzchar(built_pandoc)) {
     built_pandoc <- regmatches(built_pandoc, regexpr("[0-9.]{4,20}", built_pandoc))
   } else {
     built_pandoc <- "unknown"
