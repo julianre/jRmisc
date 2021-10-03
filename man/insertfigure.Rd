@@ -38,5 +38,5 @@ Command to insert a figure in Markdown
 \description{
 Formats the caption according to the output format.
 For the short caption, you need this Lua Filter: https://github.com/pandoc/lua-filters/tree/master/short-captions
-The function \code{EZfigure()} is a wrapper function for \code{insertfigure(..., label = opts_current$get("label"), path = knitr::fig_chunk(opts_current$get("label"), ext = "png"), unlisted = FALSE, ext = "png", auto_pdf = TRUE)}. By default, the file path from the previous chunk is used.
+The function \code{EZfigure()} is a wrapper function for \code{insertfigure(..., label = knitr::opts_current$get("label"), path = knitr::fig_chunk(knitr::opts_current$get("label"), ext = "png"), unlisted = FALSE, ext = "png", auto_pdf = TRUE)}. By default, the file path from the previous chunk is used.
 }
