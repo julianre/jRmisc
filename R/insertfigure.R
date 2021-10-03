@@ -2,7 +2,7 @@
 #'
 #' Formats the caption according to the output format.
 #' For the short caption, you need this Lua Filter: https://github.com/pandoc/lua-filters/tree/master/short-captions
-#' The function `EZfigure()` is a wrapper function for `insertfigure(..., label = opts_current$get("label"), path = knitr::fig_chunk(opts_current$get("label"), ext = "png"), unlisted = FALSE, ext = "png", auto_pdf = TRUE)`. By default, the file path from the previous chunk is used.
+#' The function `EZfigure()` is a wrapper function for `insertfigure(..., label = knitr::opts_current$get("label"), path = knitr::fig_chunk(knitr::opts_current$get("label"), ext = "png"), unlisted = FALSE, ext = "png", auto_pdf = TRUE)`. By default, the file path from the previous chunk is used.
 #'
 #' @param path Full path to the image file (with extension), default is the path to the figure of the last chunk
 #' @param caption A character vector containing the (long) caption of the figure.
@@ -99,5 +99,5 @@ insertfigure <- function(
 
 #' @rdname insertfigure
 #' @export
-EZfigure <- function(caption, shortcaption = NULL) { insertfigure(caption = caption, shortcaption = shortcaption, label = opts_current$get("label"),
-  path = knitr::fig_chunk(opts_current$get("label"), "png"), unlisted = FALSE, ext = "png", auto_pdf = TRUE) }
+EZfigure <- function(caption, shortcaption = NULL) { insertfigure(caption = caption, shortcaption = shortcaption, label = knitr::opts_current$get("label"),
+  path = knitr::fig_chunk(knitr::opts_current$get("label"), "png"), unlisted = FALSE, ext = "png", auto_pdf = TRUE) }
