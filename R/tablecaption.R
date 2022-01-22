@@ -67,4 +67,4 @@ tablecaption <- function(
 
 #' @rdname tablecaption
 #' @export
-EZtable <- function(caption, shortcaption = NULL, label = opts_current$get("label")) { tablecaption(caption = caption, shortcaption = shortcaption, unlisted = FALSE, label = label) }
+EZtable <- function(caption, shortcaption = NULL, label = knitr::opts_current$get("label")) { tablecaption(caption = caption, shortcaption = shortcaption, unlisted = FALSE, label = label) }

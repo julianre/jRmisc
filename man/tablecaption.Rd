@@ -7,7 +7,7 @@
 \usage{
 tablecaption(caption, label = NULL, shortcaption = NULL, unlisted = FALSE)
 
-EZtable(caption, shortcaption = NULL, label = opts_current$get("label"))
+EZtable(caption, shortcaption = NULL, label = knitr::opts_current$get("label"))
 }
 \arguments{
 \item{caption}{A character vector containing the (long) caption of the table.}
