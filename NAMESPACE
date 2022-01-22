@@ -3,7 +3,7 @@
 export(EZfigure)
 export(EZtable)
 export(insertfigure)
-export(latex_book2)
+export(latex_book)
 export(percentjr)
 export(tablecaption)
 export(theme_jr)
