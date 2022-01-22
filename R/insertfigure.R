@@ -41,10 +41,10 @@ insertfigure <- function(
     i = file.exists(path2)
     path[i] = path2[i]
   }
-  # if (knitr:::child_mode()) {
+  # if (child_mode()) {
   #   error = FALSE
   #   }
-  if (!(knitr:::child_mode()) && length(p <- path[!xfun::is_web_path(path) & !file.exists(path)])) {
+  if (!(child_mode()) && length(p <- path[!xfun::is_web_path(path) & !file.exists(path)])) {
     stop("Cannot find the file(s): ", paste0("\"", p, "\"", collapse = "; "))
   }
   # Check, if caption is a character vector
@@ -96,6 +96,8 @@ insertfigure <- function(
   }
   return(figure_str)
 }
+
+child_mode <- utils::getFromNamespace("child_mode", "knitr")
 
 #' @rdname insertfigure
 #' @export

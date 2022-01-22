@@ -1,4 +1,10 @@
 #' @importFrom utils file_test
+find_program <- utils::getFromNamespace("find_program", "rmarkdown")
+is_windows <- utils::getFromNamespace("is_windows", "rmarkdown")
+dir_exists <- utils::getFromNamespace("dir_exists", "rmarkdown")
+with_pandoc_safe_environment <- utils::getFromNamespace("with_pandoc_safe_environment", "rmarkdown")
+find_program <- utils::getFromNamespace("find_program", "rmarkdown")
+
 .citeproc <- new.env()
 .citeproc$dir <- NULL
 .citeproc$version <- NULL
@@ -13,13 +19,13 @@ find_citeproc <- function(cache = TRUE) {
   if (!is.null(.citeproc$dir) && cache) return(invisible(as.list(.citeproc)))
 
   # define potential sources
-  sys_citeproc <- rmarkdown:::find_program("pandoc-citeproc")
+  sys_citeproc <- find_program("pandoc-citeproc")
   sources <- c(Sys.getenv("RSTUDIO_PANDOC"), if (nzchar(sys_citeproc)) dirname(sys_citeproc))
-  if (!rmarkdown:::is_windows()) sources <- c(sources, path.expand("~/opt/pandoc"))
+  if (!is_windows()) sources <- c(sources, path.expand("~/opt/pandoc"))
 
   # determine the versions of the sources
   versions <- lapply(sources, function(src) {
-    if (rmarkdown:::dir_exists(src)) get_citeproc_version(src) else numeric_version("0")
+    if (dir_exists(src)) get_citeproc_version(src) else numeric_version("0")
   })
 
   # find the maximum version
@@ -45,9 +51,9 @@ find_citeproc <- function(cache = TRUE) {
 # Get an S3 numeric_version for the pandoc-citeproc utility at the specified path
 get_citeproc_version <- function(citeproc_dir) {
   path <- file.path(citeproc_dir, "pandoc-citeproc")
-  if (rmarkdown:::is_windows()) path <- paste0(path, ".exe")
+  if (is_windows()) path <- paste0(path, ".exe")
   if (!utils::file_test("-x", path)) return(numeric_version("0"))
-  info <- rmarkdown:::with_pandoc_safe_environment(
+  info <- with_pandoc_safe_environment(
     system(paste(shQuote(path), "--version"), intern = TRUE)
   )
   version <- strsplit(info, "\n")[[1]][1]
@@ -74,13 +80,13 @@ find_crossref <- function(cache = TRUE) {
   if (!is.null(.crossref$dir) && cache) return(invisible(as.list(.crossref)))
 
   # define potential sources
-  sys_crossref <- rmarkdown:::find_program("pandoc-crossref")
+  sys_crossref <- find_program("pandoc-crossref")
   sources <- c(Sys.getenv("RSTUDIO_PANDOC"), if (nzchar(sys_crossref)) dirname(sys_crossref))
-  if (!rmarkdown:::is_windows()) sources <- c(sources, path.expand("~/opt/pandoc"))
+  if (!is_windows()) sources <- c(sources, path.expand("~/opt/pandoc"))
 
   # determine the versions of the sources
   versions <- lapply(sources, function(src) {
-    if (rmarkdown:::dir_exists(src)) get_crossref_version(src) else numeric_version("0")
+    if (dir_exists(src)) get_crossref_version(src) else numeric_version("0")
   })
 
   # find the maximum version
@@ -107,9 +113,9 @@ find_crossref <- function(cache = TRUE) {
 # Get an S3 numeric_version for the pandoc-crossref utility at the specified path
 get_crossref_version <- function(crossref_dir) {
   path <- file.path(crossref_dir, "pandoc-crossref")
-  if (rmarkdown:::is_windows()) path <- paste0(path, ".exe")
+  if (is_windows()) path <- paste0(path, ".exe")
   if (!utils::file_test("-x", path)) return(numeric_version("0"))
-  info <- rmarkdown:::with_pandoc_safe_environment(
+  info <- with_pandoc_safe_environment(
     system(paste(shQuote(path), "--version"), intern = TRUE)
   )
   version <- strsplit(info, " ")[[1]][2]
@@ -120,9 +126,9 @@ get_crossref_version <- function(crossref_dir) {
 # Extract Pandoc Version used for building pandoc-crossref
 get_crossref_pandoc_version <- function(crossref_dir) {
   path <- file.path(crossref_dir, "pandoc-crossref")
-  if (rmarkdown:::is_windows()) path <- paste0(path, ".exe")
+  if (is_windows()) path <- paste0(path, ".exe")
   if (!utils::file_test("-x", path)) return(numeric_version("0"))
-  info <- rmarkdown:::with_pandoc_safe_environment(
+  info <- with_pandoc_safe_environment(
     system(paste(shQuote(path), "--version"), intern = TRUE)
   )
   built_pandoc <- regmatches(info[[1]], regexpr("built with Pandoc [v0-9.]{4,20}", info[[1]]))
