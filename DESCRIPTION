@@ -14,14 +14,14 @@ Roxygen: list(markdown = TRUE)
 Imports:
     ggplot2,
     scales,
-    sessioninfo,
-    withr,
+    withr (>= 2.3.0),
     utils,
-    knitr,
-    rmarkdown (>= 2.9),
-    bookdown,
+    knitr (>= 1.38),
+    rmarkdown (>= 2.14),
+    bookdown (>= 0.23),
     stringr,
-    xfun
 RoxygenNote: 7.1.2
+    xfun (>= 0.29),
+    DescTools
 Suggests: 
 VignetteBuilder: knitr
