@@ -20,8 +20,8 @@ Imports:
     rmarkdown (>= 2.14),
     bookdown (>= 0.23),
     stringr,
-RoxygenNote: 7.1.2
     xfun (>= 0.29),
     DescTools
+RoxygenNote: 7.2.3
 Suggests: 
 VignetteBuilder: knitr
