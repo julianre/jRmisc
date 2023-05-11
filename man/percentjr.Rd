@@ -26,7 +26,7 @@ Applied to rescaled data.}
 
 \item{prefix}{Symbols to display before and after value.}
 
-\item{suffix}{Symbols to display before and after value. If \code{suffix=="thinspace"} returns " \%", else if \code{suffix} is a character, returns \code{suffix}. If it is not a character, returns "\%".}
+\item{suffix}{Symbols to display before and after value. If \code{suffix=="thinspace"} returns " \%", else if \code{suffix} is a character, returns \code{suffix}. If it is not a character, returns "\%".}
 
 \item{big.mark}{Character used between every 3 digits to separate thousands.}
 

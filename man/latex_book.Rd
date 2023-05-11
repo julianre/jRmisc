@@ -19,19 +19,7 @@ latex_book(
 )
 }
 \arguments{
-\item{toc}{See
-\code{rmarkdown::\link{pdf_document}}, or the documentation of the
-\code{base_format} function.}
-
-\item{number_sections}{See
-\code{rmarkdown::\link{pdf_document}}, or the documentation of the
-\code{base_format} function.}
-
-\item{fig_caption}{See
-\code{rmarkdown::\link{pdf_document}}, or the documentation of the
-\code{base_format} function.}
-
-\item{pandoc_args}{See
+\item{toc, number_sections, fig_caption, pandoc_args}{See
 \code{rmarkdown::\link{pdf_document}}, or the documentation of the
 \code{base_format} function.}
 
