@@ -2,7 +2,10 @@ Package: jRmisc
 Title: Miscellaneous Functions by julianre
 Version: 0.0.7
 Authors@R: 
-    person(given = "Julian", family = "Reinhold", role = c("aut", "cre"))
+  person(given = "Julian",
+        family = "Reinhold",
+        role = c("aut", "cre"),
+        email = "julianre@mailbox.org")
 Description: Provides functions, that are (sometimes) useful.
 Language: en-US
 License: MIT + file LICENSE
