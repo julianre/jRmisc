@@ -94,7 +94,7 @@ insertfigure <- function(
                           ")",
                           ifelse(!is.null(label), paste0("{", label, "}"), ""))
   }
-  cat(figure_str)
+  return(figure_str)
 }
 
 child_mode <- utils::getFromNamespace("child_mode", "knitr")

@@ -62,7 +62,7 @@ tablecaption <- function(
                           caption,
                           ifelse(!is.null(label), paste0(" {", label, "}"), ""))
   }
-  cat(caption_str)
+  return(caption_str)
 }
 
 #' @rdname tablecaption
