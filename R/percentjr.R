@@ -5,7 +5,7 @@
 #' Applied to rescaled data.
 #' @param scale A scaling factor: x will be multiplied by `scale` before formatting. This is useful if the underlying data is very small or very large.
 #' @param prefix Symbols to display before and after value.
-#' @param suffix Symbols to display before and after value. If `suffix=="thinspace"` returns " %", else if `suffix` is a character, returns `suffix`. If it is not a character, returns "%".
+#' @param suffix Symbols to display before and after value. If `suffix=="thinspace"` returns " %", else if `suffix` is a character, returns `suffix`. If it is not a character, returns "%".
 #'
 #' @param big.mark Character used between every 3 digits to separate thousands.
 #' @param decimal.mark The character to be used to indicate the numeric decimal point.
