@@ -17,7 +17,7 @@ theme_jr <- function(base_size = 11, base_family = "",
                      base_line_size = base_size/22, base_rect_size = base_size/22) {
   half_line <- base_size/2
   theme(
-    line = element_line(colour = "black", linewith = base_line_size,
+    line = element_line(colour = "black", linewidth = base_line_size,
                         linetype = 1, lineend = "butt"),
     rect = element_rect(fill = "white", colour = "black",
                         linewidth = base_rect_size, linetype = 1),
