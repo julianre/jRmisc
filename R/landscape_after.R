@@ -21,7 +21,7 @@ landscape_after <-
     if (clearpage == TRUE && attr(ls_input, "landscape") == TRUE) {
       kable_attrs <- attributes(ls_input)
       out <- paste0(
-        "\n\\afterpage{", solve_enc(ls_input),
+        "\n\\afterpage{", kableExtra:::solve_enc(ls_input),
         "\n}"
       )
       out <- structure(out, format = "latex", class = "knitr_kable")
