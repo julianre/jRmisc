@@ -3,6 +3,7 @@
 export(EZfigure)
 export(EZtable)
 export(insertfigure)
+export(landscape_after)
 export(latex_book)
 export(percentjr)
 export(tablecaption)
