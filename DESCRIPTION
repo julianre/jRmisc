@@ -17,14 +17,13 @@ Roxygen: list(markdown = TRUE)
 Imports:
     ggplot2,
     scales,
-    withr (>= 2.3.0),
     utils,
     knitr (>= 1.38),
     rmarkdown (>= 2.14),
     bookdown (>= 0.23),
     stringr,
     xfun (>= 0.29),
-    DescTools
+    kableExtra
 RoxygenNote: 7.2.3
 Suggests: 
 VignetteBuilder: knitr
